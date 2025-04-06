@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: custom_nginx
+  labels:
+    app: c_nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: c_nginx
+  template:
+    metadata:
+      labels:
+        app: c_nginx
+    spec:
+      containers:
+      - name: c_nginx
+        image: chiragcodes/chirag-nginx
+        ports:
+        - containerPort: 80
