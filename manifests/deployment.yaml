@@ -2,20 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: custom-ngin
-  labels:
-    app: c-nginx
+  namespace: myapps
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
-      app: c-nginxn
+      app: custom-ngin
   template:
     metadata:
       labels:
-        app: c-nginxn
+        app: custom-ngin
     spec:
       containers:
-      - name: c-nginx
-        image: chiragcodes/chirag-nginx
+      - name: nginx
+        image: nginx:latest
         ports:
         - containerPort: 80
