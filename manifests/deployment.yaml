@@ -4,7 +4,7 @@ metadata:
   name: custom-ngin
   namespace: myapps
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: custom-ngin
